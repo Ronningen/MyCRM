@@ -1,0 +1,167 @@
+﻿namespace CRMCore.Patterns
+{
+    partial class PatternDataForm<TEntity, TEntityForm> 
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.mainDataGridView = new System.Windows.Forms.DataGridView();
+            this.labelListHeader = new System.Windows.Forms.Label();
+            this.buttonAdd = new System.Windows.Forms.Button();
+            this.buttonEdit = new System.Windows.Forms.Button();
+            this.buttonDelete = new System.Windows.Forms.Button();
+            this.ColumnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEmblem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mainDataGridView)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // pictureBoxEmblem
+            // 
+            this.pictureBoxEmblem.Location = new System.Drawing.Point(614, 25);
+            this.pictureBoxEmblem.Size = new System.Drawing.Size(138, 42);
+            // 
+            // mainDataGridView
+            // 
+            this.mainDataGridView.AllowUserToAddRows = false;
+            this.mainDataGridView.AllowUserToDeleteRows = false;
+            this.mainDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.mainDataGridView.BackgroundColor = System.Drawing.Color.LavenderBlush;
+            this.mainDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.mainDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnId});
+            this.mainDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.mainDataGridView.Location = new System.Drawing.Point(18, 57);
+            this.mainDataGridView.Margin = new System.Windows.Forms.Padding(10);
+            this.mainDataGridView.Name = "mainDataGridView";
+            this.mainDataGridView.ReadOnly = true;
+            this.mainDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.mainDataGridView.Size = new System.Drawing.Size(576, 340);
+            this.mainDataGridView.TabIndex = 1;
+            // 
+            // labelListHeader
+            // 
+            this.labelListHeader.AutoSize = true;
+            this.labelListHeader.Location = new System.Drawing.Point(18, 25);
+            this.labelListHeader.Name = "labelListHeader";
+            this.labelListHeader.Size = new System.Drawing.Size(96, 18);
+            this.labelListHeader.TabIndex = 2;
+            this.labelListHeader.Text = "list header";
+            // 
+            // buttonAdd
+            // 
+            this.buttonAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonAdd.BackColor = System.Drawing.Color.Purple;
+            this.buttonAdd.FlatAppearance.BorderSize = 0;
+            this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAdd.ForeColor = System.Drawing.Color.White;
+            this.buttonAdd.Location = new System.Drawing.Point(619, 87);
+            this.buttonAdd.Margin = new System.Windows.Forms.Padding(10);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Padding = new System.Windows.Forms.Padding(10);
+            this.buttonAdd.Size = new System.Drawing.Size(133, 45);
+            this.buttonAdd.TabIndex = 6;
+            this.buttonAdd.Text = "Add";
+            this.buttonAdd.UseVisualStyleBackColor = false;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            // 
+            // buttonEdit
+            // 
+            this.buttonEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonEdit.BackColor = System.Drawing.Color.Purple;
+            this.buttonEdit.FlatAppearance.BorderSize = 0;
+            this.buttonEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEdit.ForeColor = System.Drawing.Color.White;
+            this.buttonEdit.Location = new System.Drawing.Point(619, 152);
+            this.buttonEdit.Margin = new System.Windows.Forms.Padding(10);
+            this.buttonEdit.Name = "buttonEdit";
+            this.buttonEdit.Padding = new System.Windows.Forms.Padding(10);
+            this.buttonEdit.Size = new System.Drawing.Size(133, 45);
+            this.buttonEdit.TabIndex = 7;
+            this.buttonEdit.Text = "Edit";
+            this.buttonEdit.UseVisualStyleBackColor = false;
+            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
+            // 
+            // buttonDelete
+            // 
+            this.buttonDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonDelete.BackColor = System.Drawing.Color.Purple;
+            this.buttonDelete.FlatAppearance.BorderSize = 0;
+            this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDelete.ForeColor = System.Drawing.Color.White;
+            this.buttonDelete.Location = new System.Drawing.Point(619, 217);
+            this.buttonDelete.Margin = new System.Windows.Forms.Padding(10);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Padding = new System.Windows.Forms.Padding(10);
+            this.buttonDelete.Size = new System.Drawing.Size(133, 45);
+            this.buttonDelete.TabIndex = 8;
+            this.buttonDelete.Text = "Delete";
+            this.buttonDelete.UseVisualStyleBackColor = false;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
+            // 
+            // ColumnId
+            // 
+            this.ColumnId.Frozen = true;
+            this.ColumnId.HeaderText = "Id";
+            this.ColumnId.Name = "ColumnId";
+            this.ColumnId.ReadOnly = true;
+            this.ColumnId.Visible = false;
+            // 
+            // PatternDataForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(777, 415);
+            this.Controls.Add(this.buttonDelete);
+            this.Controls.Add(this.buttonEdit);
+            this.Controls.Add(this.buttonAdd);
+            this.Controls.Add(this.labelListHeader);
+            this.Controls.Add(this.mainDataGridView);
+            this.Name = "PatternDataForm";
+            this.Controls.SetChildIndex(this.pictureBoxEmblem, 0);
+            this.Controls.SetChildIndex(this.mainDataGridView, 0);
+            this.Controls.SetChildIndex(this.labelListHeader, 0);
+            this.Controls.SetChildIndex(this.buttonAdd, 0);
+            this.Controls.SetChildIndex(this.buttonEdit, 0);
+            this.Controls.SetChildIndex(this.buttonDelete, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEmblem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mainDataGridView)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.DataGridView mainDataGridView;
+        private System.Windows.Forms.Label labelListHeader;
+        private System.Windows.Forms.Button buttonAdd;
+        private System.Windows.Forms.Button buttonEdit;
+        private System.Windows.Forms.Button buttonDelete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnId;
+    }
+}
