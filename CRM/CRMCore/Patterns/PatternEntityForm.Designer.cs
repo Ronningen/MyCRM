@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonAE = new System.Windows.Forms.Button();
+            this.buttonConfirm = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEmblem)).BeginInit();
             this.SuspendLayout();
             // 
@@ -36,33 +36,35 @@
             // 
             this.pictureBoxEmblem.Location = new System.Drawing.Point(236, 25);
             // 
-            // buttonAE
+            // buttonConfirm
             // 
-            this.buttonAE.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.buttonConfirm.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAE.BackColor = System.Drawing.Color.Purple;
-            this.buttonAE.FlatAppearance.BorderSize = 0;
-            this.buttonAE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAE.ForeColor = System.Drawing.Color.White;
-            this.buttonAE.Location = new System.Drawing.Point(25, 380);
-            this.buttonAE.Margin = new System.Windows.Forms.Padding(10);
-            this.buttonAE.Name = "buttonAE";
-            this.buttonAE.Padding = new System.Windows.Forms.Padding(10);
-            this.buttonAE.Size = new System.Drawing.Size(286, 45);
-            this.buttonAE.TabIndex = 7;
-            this.buttonAE.Text = "Add" + typeof(TEntity).Name.ToLower();
-            this.buttonAE.UseVisualStyleBackColor = false;
-            this.buttonAE.Click += new System.EventHandler(this.buttonAE_Click);
+            this.buttonConfirm.BackColor = System.Drawing.Color.BlueViolet;
+            this.buttonConfirm.FlatAppearance.BorderSize = 0;
+            this.buttonConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonConfirm.ForeColor = System.Drawing.Color.White;
+            this.buttonConfirm.Location = new System.Drawing.Point(25, 86);
+            this.buttonConfirm.Margin = new System.Windows.Forms.Padding(10);
+            this.buttonConfirm.Name = "buttonConfirm";
+            this.buttonConfirm.Padding = new System.Windows.Forms.Padding(10);
+            this.buttonConfirm.Size = new System.Drawing.Size(286, 45);
+            this.buttonConfirm.TabIndex = 7;
+            this.buttonConfirm.Text = "Confirm";
+            this.buttonConfirm.UseVisualStyleBackColor = false;
+            this.buttonConfirm.Click += new System.EventHandler(this.buttonConfirm_Click);
             // 
             // PatternEntityForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(336, 450);
-            this.Controls.Add(this.buttonAE);
+            this.ClientSize = new System.Drawing.Size(336, 156);
+            this.Controls.Add(this.buttonConfirm);
             this.Name = "PatternEntityForm";
+            this.Text = "";
             this.Controls.SetChildIndex(this.pictureBoxEmblem, 0);
-            this.Controls.SetChildIndex(this.buttonAE, 0);
+            this.Controls.SetChildIndex(this.buttonConfirm, 0);
+            this.Load += new System.EventHandler(this.PatternEntityForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEmblem)).EndInit();
             this.ResumeLayout(false);
 
@@ -70,6 +72,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button buttonAE;
+        private System.Windows.Forms.Button buttonConfirm;
     }
 }

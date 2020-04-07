@@ -4,82 +4,90 @@ go
 use CRMdb
 go
 
---UserM module
+--User module - base
 
 create table Roles
 (
-	Id int primary key identity(1,1),
-	[Value] nvarchar(max) not null unique
+	RoleValue nvarchar(100) primary key
 )
 
-create table Offices
-(
-	Id int primary key identity(1,1),
-	[Name] nvarchar(max) not null unique,
-	Deleted bit default 0 not null
-)
+insert into Roles(RoleValue) values ('UserM')
 
 create table Users
 (
-	Id int primary key identity(1,1),
-	[Login] nvarchar(max) not null unique,
-	[Password] nvarchar(max) not null,
-	OfficeId int foreign key references Offices(Id) on delete cascade not null,
-	Deleted bit default 0 not null
+	Id uniqueidentifier default newsequentialid() primary key,
+	[Login] nvarchar(100) not null unique,
+	[Password] nvarchar(100) not null,
+
+	Phone nvarchar(100) null unique,
+	Email nvarchar(100) null unique
 )
 
 create table UserRoles
 (
-	UserId int foreign key references Users(Id) on delete cascade primary key,
-	RoleId int foreign key references Roles(Id) on delete cascade primary key,
-	constraint PK_UserRole primary key (UserId, RoleId)
-)
-go
-
-insert into Roles([Value]) values ('UserM'), ('ClientM'), ('ProductM'), ('OrderM')
-go
-
-
---ProductM module
-
-create table ProductTypes
-(
-	Id int primary key identity(1,1),
-	[Name] nvarchar(max) not null unique,
-	[Description] nvarchar(max) null,
-	Price money default 0 not null,
-	Deleted bit default 0 not null
+	UserId uniqueidentifier foreign key references Users(Id) on delete cascade on update cascade not null,
+	RoleId nvarchar(100) foreign key references Roles(RoleValue) on delete cascade  on update cascade not null,
+	constraint PK_UserRole primary key clustered (UserId, RoleId)
 )
 
-create table ConcreteProducts
-(
-	Id int primary key identity(1,1),
-	ProductTypeId int foreign key references ProductTypes(Id) on delete cascade not null,
-	Deleted bit default 0 not null
-)
 go
 
---ClientM module
+--Customer module 
 
-create table Clients
+insert into Roles(RoleValue) values ('CustomerM')
+
+create table Customers
 (
-	Id int primary key identity(1,1),
-	FirstName nvarchar(max) not null,
-	SecondName nvarchar(max) not null,
-	LastName nvarchar(max) null,
-	Phone nvarchar(max) null,
-	Email nvarchar(max) null,
-	UserId int foreign key references Users(Id) on delete cascade not null, -- This client's manager
-	Deleted bit default 0 not null
+	Id uniqueidentifier default newsequentialid() primary key,
+
+	UserId uniqueidentifier foreign key references Users(Id) on delete set null on update cascade null, -- This client's current manager
+	
+	FirstName nvarchar(100) not null,
+	SecondName nvarchar(100) not null,
+	LastName nvarchar(100) null,
+	Phone nvarchar(100) null unique,
+	Email nvarchar(100) null unique,
 )
 
 create table Orders
 (
-	Id int primary key identity(1,1),
-	ClientId int foreign key references Clients(Id) on delete cascade not null,
+	Id uniqueidentifier default newsequentialid() primary key, 
+	CustomerId uniqueidentifier foreign key references Customers(Id) on delete cascade on update cascade not null,
+
 	[Description] nvarchar(max) not null,
-	[Status] nvarchar(max) not null default N'Requested',
+	[Status] nvarchar(100) not null,
 	OpenDate date not null,
-	CloseDate date not null,
-	Deleted bit default 0 not null
+	CloseDate date not null
 )
+go
+
+--Product module
+
+insert into Roles(RoleValue) values ('ProductM')
+
+create table ProductTypes
+(
+	Id uniqueidentifier primary key default newsequentialid(),
+
+	[Description] nvarchar(max) not null,
+	Price money default 0 not null
+)
+
+create table ConcreteProducts
+(
+	Id uniqueidentifier primary key default newsequentialid(),
+	ProductTypeId uniqueidentifier foreign key references ProductTypes(Id) on delete cascade on update cascade not null,
+	Sold bit default 0 not null
+)
+go
+
+--Order module : Client, Product
+
+insert into Roles(RoleValue) values ('OrderM')
+
+create table OrderLineProducts
+(
+	ConcreteProductId uniqueidentifier primary key foreign key references ConcreteProducts(Id) on delete cascade on update cascade, 
+	OrderId uniqueidentifier foreign key references Orders(Id) on delete cascade on update cascade not null
+)
+go

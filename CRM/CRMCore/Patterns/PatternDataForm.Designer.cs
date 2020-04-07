@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.mainDataGridView = new System.Windows.Forms.DataGridView();
-            this.labelListHeader = new System.Windows.Forms.Label();
+            this.ColumnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonEdit = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
-            this.ColumnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonObserve = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEmblem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -55,27 +55,26 @@
             this.mainDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnId});
             this.mainDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.mainDataGridView.Location = new System.Drawing.Point(18, 57);
+            this.mainDataGridView.Location = new System.Drawing.Point(18, 25);
             this.mainDataGridView.Margin = new System.Windows.Forms.Padding(10);
             this.mainDataGridView.Name = "mainDataGridView";
             this.mainDataGridView.ReadOnly = true;
             this.mainDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.mainDataGridView.Size = new System.Drawing.Size(576, 340);
+            this.mainDataGridView.Size = new System.Drawing.Size(576, 304);
             this.mainDataGridView.TabIndex = 1;
             // 
-            // labelListHeader
+            // ColumnId
             // 
-            this.labelListHeader.AutoSize = true;
-            this.labelListHeader.Location = new System.Drawing.Point(18, 25);
-            this.labelListHeader.Name = "labelListHeader";
-            this.labelListHeader.Size = new System.Drawing.Size(96, 18);
-            this.labelListHeader.TabIndex = 2;
-            this.labelListHeader.Text = "list header";
+            this.ColumnId.Frozen = true;
+            this.ColumnId.HeaderText = "Id";
+            this.ColumnId.Name = "ColumnId";
+            this.ColumnId.ReadOnly = true;
+            this.ColumnId.Visible = false;
             // 
             // buttonAdd
             // 
             this.buttonAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAdd.BackColor = System.Drawing.Color.Purple;
+            this.buttonAdd.BackColor = System.Drawing.Color.BlueViolet;
             this.buttonAdd.FlatAppearance.BorderSize = 0;
             this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAdd.ForeColor = System.Drawing.Color.White;
@@ -92,11 +91,11 @@
             // buttonEdit
             // 
             this.buttonEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonEdit.BackColor = System.Drawing.Color.Purple;
+            this.buttonEdit.BackColor = System.Drawing.Color.BlueViolet;
             this.buttonEdit.FlatAppearance.BorderSize = 0;
             this.buttonEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEdit.ForeColor = System.Drawing.Color.White;
-            this.buttonEdit.Location = new System.Drawing.Point(619, 152);
+            this.buttonEdit.Location = new System.Drawing.Point(619, 217);
             this.buttonEdit.Margin = new System.Windows.Forms.Padding(10);
             this.buttonEdit.Name = "buttonEdit";
             this.buttonEdit.Padding = new System.Windows.Forms.Padding(10);
@@ -113,7 +112,7 @@
             this.buttonDelete.FlatAppearance.BorderSize = 0;
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDelete.ForeColor = System.Drawing.Color.White;
-            this.buttonDelete.Location = new System.Drawing.Point(619, 217);
+            this.buttonDelete.Location = new System.Drawing.Point(619, 282);
             this.buttonDelete.Margin = new System.Windows.Forms.Padding(10);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Padding = new System.Windows.Forms.Padding(10);
@@ -123,45 +122,53 @@
             this.buttonDelete.UseVisualStyleBackColor = false;
             this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
-            // ColumnId
+            // buttonObserve
             // 
-            this.ColumnId.Frozen = true;
-            this.ColumnId.HeaderText = "Id";
-            this.ColumnId.Name = "ColumnId";
-            this.ColumnId.ReadOnly = true;
-            this.ColumnId.Visible = false;
+            this.buttonObserve.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonObserve.BackColor = System.Drawing.Color.BlueViolet;
+            this.buttonObserve.FlatAppearance.BorderSize = 0;
+            this.buttonObserve.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonObserve.ForeColor = System.Drawing.Color.White;
+            this.buttonObserve.Location = new System.Drawing.Point(619, 152);
+            this.buttonObserve.Margin = new System.Windows.Forms.Padding(10);
+            this.buttonObserve.Name = "buttonObserve";
+            this.buttonObserve.Padding = new System.Windows.Forms.Padding(10);
+            this.buttonObserve.Size = new System.Drawing.Size(133, 45);
+            this.buttonObserve.TabIndex = 9;
+            this.buttonObserve.Text = "Observe";
+            this.buttonObserve.UseVisualStyleBackColor = false;
+            this.buttonObserve.Click += new System.EventHandler(this.buttonObserve_Click);
             // 
             // PatternDataForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(777, 415);
+            this.ClientSize = new System.Drawing.Size(777, 347);
+            this.Controls.Add(this.buttonObserve);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonEdit);
             this.Controls.Add(this.buttonAdd);
-            this.Controls.Add(this.labelListHeader);
             this.Controls.Add(this.mainDataGridView);
             this.Name = "PatternDataForm";
             this.Controls.SetChildIndex(this.pictureBoxEmblem, 0);
             this.Controls.SetChildIndex(this.mainDataGridView, 0);
-            this.Controls.SetChildIndex(this.labelListHeader, 0);
             this.Controls.SetChildIndex(this.buttonAdd, 0);
             this.Controls.SetChildIndex(this.buttonEdit, 0);
             this.Controls.SetChildIndex(this.buttonDelete, 0);
+            this.Controls.SetChildIndex(this.buttonObserve, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEmblem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainDataGridView)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView mainDataGridView;
-        private System.Windows.Forms.Label labelListHeader;
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Button buttonEdit;
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnId;
+        private System.Windows.Forms.Button buttonObserve;
     }
 }
