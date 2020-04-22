@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data.Entity;
 
-namespace CRMCore
+namespace CRMCore.Entities
 {
     class EntitiesHandler<TEntities> where TEntities : DbContext, new()
     {

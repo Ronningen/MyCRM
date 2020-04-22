@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Data.Entity;
-
+using CRMCore.Entities;
 
 namespace CRMCore.Patterns
 {
@@ -11,16 +11,16 @@ namespace CRMCore.Patterns
     /// <typeparam name="TEntity"> Type of entities in set </typeparam>
     /// <typeparam name="TEntityForm"> Type of windows form using to add, change or observe entity </typeparam>
     abstract public partial class PatternDataForm<TEntity, TEntityForm> : PatternForm
-        where TEntity : class, new()
+        where TEntity : class, IViewEntity, new()
         where TEntityForm : PatternEntityForm<TEntity>, new()
     {
         protected DbSet<TEntity> source;
 
-        protected PatternDataForm(DbSet<TEntity> source)
+        public PatternDataForm(DbSet<TEntity> source)
         {
             InitializeComponent();
             this.source = source;
-            Text = typeof(TEntity).Name + "managment";
+            Text = typeof(TEntity).GetName() + "managment";
         }
 
         /// <summary>
@@ -49,13 +49,13 @@ namespace CRMCore.Patterns
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
-            this.OpenAsDialog(new TEntityForm() { entity = SelectedEntity(), mode = EntityFormMode.Edit });
+            this.OpenAsDialog((TEntityForm)(EntityFormMode.Edit, SelectedEntity()));
             FillTable();
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            TEntityForm entityForm = new TEntityForm() { mode = EntityFormMode.Add };
+            TEntityForm entityForm = (TEntityForm)EntityFormMode.Add;
             this.OpenAsDialog(entityForm);
             if (entityForm.entity != null)
                 source.Add(entityForm.entity);
@@ -72,7 +72,7 @@ namespace CRMCore.Patterns
 
         private void buttonObserve_Click(object sender, EventArgs e)
         {
-            this.OpenAsDialog(new TEntityForm() { mode = EntityFormMode.Observe });
+            this.OpenAsDialog((TEntityForm)(EntityFormMode.Observe, SelectedEntity()));
         }
     }
 }

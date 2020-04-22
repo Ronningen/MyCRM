@@ -40,8 +40,10 @@
             // 
             // pictureBoxEmblem
             // 
-            this.pictureBoxEmblem.Location = new System.Drawing.Point(614, 25);
-            this.pictureBoxEmblem.Size = new System.Drawing.Size(138, 42);
+            this.pictureBoxEmblem.Location = new System.Drawing.Point(428, 25);
+            this.pictureBoxEmblem.Margin = new System.Windows.Forms.Padding(12, 10, 12, 10);
+            this.pictureBoxEmblem.Padding = new System.Windows.Forms.Padding(12, 10, 12, 10);
+            this.pictureBoxEmblem.Size = new System.Drawing.Size(123, 42);
             // 
             // mainDataGridView
             // 
@@ -55,12 +57,12 @@
             this.mainDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnId});
             this.mainDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.mainDataGridView.Location = new System.Drawing.Point(18, 25);
-            this.mainDataGridView.Margin = new System.Windows.Forms.Padding(10);
+            this.mainDataGridView.Location = new System.Drawing.Point(20, 25);
+            this.mainDataGridView.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
             this.mainDataGridView.Name = "mainDataGridView";
             this.mainDataGridView.ReadOnly = true;
             this.mainDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.mainDataGridView.Size = new System.Drawing.Size(576, 304);
+            this.mainDataGridView.Size = new System.Drawing.Size(385, 304);
             this.mainDataGridView.TabIndex = 1;
             // 
             // ColumnId
@@ -78,11 +80,11 @@
             this.buttonAdd.FlatAppearance.BorderSize = 0;
             this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAdd.ForeColor = System.Drawing.Color.White;
-            this.buttonAdd.Location = new System.Drawing.Point(619, 87);
-            this.buttonAdd.Margin = new System.Windows.Forms.Padding(10);
+            this.buttonAdd.Location = new System.Drawing.Point(432, 87);
+            this.buttonAdd.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Padding = new System.Windows.Forms.Padding(10);
-            this.buttonAdd.Size = new System.Drawing.Size(133, 45);
+            this.buttonAdd.Padding = new System.Windows.Forms.Padding(11, 10, 11, 10);
+            this.buttonAdd.Size = new System.Drawing.Size(117, 45);
             this.buttonAdd.TabIndex = 6;
             this.buttonAdd.Text = "Add";
             this.buttonAdd.UseVisualStyleBackColor = false;
@@ -95,11 +97,11 @@
             this.buttonEdit.FlatAppearance.BorderSize = 0;
             this.buttonEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEdit.ForeColor = System.Drawing.Color.White;
-            this.buttonEdit.Location = new System.Drawing.Point(619, 217);
-            this.buttonEdit.Margin = new System.Windows.Forms.Padding(10);
+            this.buttonEdit.Location = new System.Drawing.Point(432, 217);
+            this.buttonEdit.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
             this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Padding = new System.Windows.Forms.Padding(10);
-            this.buttonEdit.Size = new System.Drawing.Size(133, 45);
+            this.buttonEdit.Padding = new System.Windows.Forms.Padding(11, 10, 11, 10);
+            this.buttonEdit.Size = new System.Drawing.Size(117, 45);
             this.buttonEdit.TabIndex = 7;
             this.buttonEdit.Text = "Edit";
             this.buttonEdit.UseVisualStyleBackColor = false;
@@ -112,11 +114,11 @@
             this.buttonDelete.FlatAppearance.BorderSize = 0;
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDelete.ForeColor = System.Drawing.Color.White;
-            this.buttonDelete.Location = new System.Drawing.Point(619, 282);
-            this.buttonDelete.Margin = new System.Windows.Forms.Padding(10);
+            this.buttonDelete.Location = new System.Drawing.Point(432, 282);
+            this.buttonDelete.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Padding = new System.Windows.Forms.Padding(10);
-            this.buttonDelete.Size = new System.Drawing.Size(133, 45);
+            this.buttonDelete.Padding = new System.Windows.Forms.Padding(11, 10, 11, 10);
+            this.buttonDelete.Size = new System.Drawing.Size(117, 45);
             this.buttonDelete.TabIndex = 8;
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.UseVisualStyleBackColor = false;
@@ -129,11 +131,11 @@
             this.buttonObserve.FlatAppearance.BorderSize = 0;
             this.buttonObserve.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonObserve.ForeColor = System.Drawing.Color.White;
-            this.buttonObserve.Location = new System.Drawing.Point(619, 152);
-            this.buttonObserve.Margin = new System.Windows.Forms.Padding(10);
+            this.buttonObserve.Location = new System.Drawing.Point(432, 152);
+            this.buttonObserve.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
             this.buttonObserve.Name = "buttonObserve";
-            this.buttonObserve.Padding = new System.Windows.Forms.Padding(10);
-            this.buttonObserve.Size = new System.Drawing.Size(133, 45);
+            this.buttonObserve.Padding = new System.Windows.Forms.Padding(11, 10, 11, 10);
+            this.buttonObserve.Size = new System.Drawing.Size(117, 45);
             this.buttonObserve.TabIndex = 9;
             this.buttonObserve.Text = "Observe";
             this.buttonObserve.UseVisualStyleBackColor = false;
@@ -141,15 +143,17 @@
             // 
             // PatternDataForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(777, 347);
+            this.ClientSize = new System.Drawing.Size(579, 347);
             this.Controls.Add(this.buttonObserve);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonEdit);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.mainDataGridView);
+            this.Margin = new System.Windows.Forms.Padding(7, 4, 7, 4);
             this.Name = "PatternDataForm";
+            this.Padding = new System.Windows.Forms.Padding(19, 15, 19, 15);
             this.Controls.SetChildIndex(this.pictureBoxEmblem, 0);
             this.Controls.SetChildIndex(this.mainDataGridView, 0);
             this.Controls.SetChildIndex(this.buttonAdd, 0);

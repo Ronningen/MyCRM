@@ -2,7 +2,7 @@
 
 namespace CRMCore.Patterns
 {
-    abstract public partial class PatternForm : Form
+    public partial class PatternForm : Form
     {
         protected bool forceClosing;
 

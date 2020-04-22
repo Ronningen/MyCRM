@@ -56,36 +56,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EntitiesHandler.cs" />
-    <Compile Include="Patterns\EntityFormMode.cs" />
-    <Compile Include="FormExtansion.cs" />
-    <Compile Include="Patterns\PatternEntityForm.cs">
+    <Compile Include="Entities\EntitiesHandler.cs" />
+    <Compile Include="Entities\NameGetter.cs" />
+    <Compile Include="Entities\ViewEntity.cs" />
+    <Compile Include="Forms\EntityFormMode.cs" />
+    <Compile Include="Forms\FormExtansion.cs" />
+    <Compile Include="Forms\EntityForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Patterns\PatternEntityForm.Designer.cs">
-      <DependentUpon>PatternEntityForm.cs</DependentUpon>
+    <Compile Include="Forms\EntityForm.Designer.cs">
+      <DependentUpon>EntityForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Patterns\PatternDataForm.cs">
+    <Compile Include="Forms\DataForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Patterns\PatternDataForm.Designer.cs">
-      <DependentUpon>PatternDataForm.cs</DependentUpon>
+    <Compile Include="Forms\DataForm.Designer.cs">
+      <DependentUpon>DataForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Patterns\PatternForm.cs">
+    <Compile Include="Forms\PatternForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Patterns\PatternForm.Designer.cs">
+    <Compile Include="Forms\PatternForm.Designer.cs">
       <DependentUpon>PatternForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Patterns\PatternEntityForm.resx">
-      <DependentUpon>PatternEntityForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\EntityForm.resx">
+      <DependentUpon>EntityForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Patterns\PatternDataForm.resx">
-      <DependentUpon>PatternDataForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\DataForm.resx">
+      <DependentUpon>DataForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Patterns\PatternForm.resx">
+    <EmbeddedResource Include="Forms\PatternForm.resx">
       <DependentUpon>PatternForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -105,6 +107,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Emblem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Entities\ConcreteEntities\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

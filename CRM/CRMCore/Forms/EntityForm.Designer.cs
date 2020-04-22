@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.buttonConfirm = new System.Windows.Forms.Button();
+            this.table = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEmblem)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,7 +45,7 @@
             this.buttonConfirm.FlatAppearance.BorderSize = 0;
             this.buttonConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonConfirm.ForeColor = System.Drawing.Color.White;
-            this.buttonConfirm.Location = new System.Drawing.Point(25, 86);
+            this.buttonConfirm.Location = new System.Drawing.Point(25, 98);
             this.buttonConfirm.Margin = new System.Windows.Forms.Padding(10);
             this.buttonConfirm.Name = "buttonConfirm";
             this.buttonConfirm.Padding = new System.Windows.Forms.Padding(10);
@@ -54,24 +55,45 @@
             this.buttonConfirm.UseVisualStyleBackColor = false;
             this.buttonConfirm.Click += new System.EventHandler(this.buttonConfirm_Click);
             // 
+            // table
+            // 
+            this.table.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.table.AutoSize = true;
+            this.table.ColumnCount = 1;
+            this.table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.table.Location = new System.Drawing.Point(25, 71);
+            this.table.Name = "table";
+            this.table.RowCount = 1;
+            this.table.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.table.Size = new System.Drawing.Size(286, 14);
+            this.table.TabIndex = 8;
+            // 
             // PatternEntityForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(336, 156);
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(336, 168);
+            this.Controls.Add(this.table);
             this.Controls.Add(this.buttonConfirm);
             this.Name = "PatternEntityForm";
             this.Text = "";
+            this.Load += new System.EventHandler(this.PatternEntityForm_Load);
             this.Controls.SetChildIndex(this.pictureBoxEmblem, 0);
             this.Controls.SetChildIndex(this.buttonConfirm, 0);
-            this.Load += new System.EventHandler(this.PatternEntityForm_Load);
+            this.Controls.SetChildIndex(this.table, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEmblem)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button buttonConfirm;
+        private System.Windows.Forms.TableLayoutPanel table;
     }
 }
