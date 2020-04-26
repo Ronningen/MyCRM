@@ -16,10 +16,10 @@ namespace CRMCore.Patterns
     {
         protected DbSet<TEntity> source;
 
-        protected PatternDataForm(DbSet<TEntity> source)
+        protected PatternDataForm()
         {
             InitializeComponent();
-            this.source = source;
+            this.source = Entities.EntitiesHandler.entitiesHandler.Entities.Set<TEntity>();
             Text = typeof(TEntity).Name + "managment";
         }
 

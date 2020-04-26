@@ -13,18 +13,6 @@ namespace CRMCore.Patterns
             InitializeComponent();
         }
 
-        //protected PatternEntityForm(TEntity entity, EntityFormMode mode)
-        //{
-        //    InitializeComponent();
-        //    this.entity = entity;
-        //    this.mode = mode;
-        //}
-
-        //public static implicit operator PatternEntityForm<TEntity>((TEntity entity, EntityFormMode mode) input)
-        //{
-        //    return new PatternEntityForm<TEntity>(input.entity, input.mode);
-        //}
-
         /// <summary>
         /// Fills user controls with data from the param entity
         /// </summary>

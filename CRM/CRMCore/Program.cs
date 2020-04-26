@@ -13,7 +13,7 @@ namespace CRMCore
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Patterns.PatternEntityForm());
+            Application.Run(new Moduls.Entry.SignIn());
         }
     }
 }
