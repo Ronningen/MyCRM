@@ -25,9 +25,13 @@ namespace CRMCore.Patterns
             forceClosing = false;
         }
 
-        public void Inform(string reason)
+        /// <summary>
+        /// Messege user some information withpout caption
+        /// </summary>
+        /// <param name="messege"> showing messege </param>
+        public void Inform(string messege)
         { 
-            MessageBox.Show(reason, "", MessageBoxButtons.OK, MessageBoxIcon.Information); 
+            MessageBox.Show(messege, "", MessageBoxButtons.OK, MessageBoxIcon.Information); 
         }
     }
 }

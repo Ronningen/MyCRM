@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Windows.Forms;
 
 namespace CRMCore.Patterns
 {
@@ -24,12 +23,6 @@ namespace CRMCore.Patterns
         /// </summary>
         /// <returns></returns>
         protected abstract bool PackEntity();
-
-        /// <summary>
-        /// Cansels packing of new entity.
-        /// </summary>
-        /// <param name="reason"> A messege which contains the reason of canseling </param>
-        /// <returns></returns>
 
         private void buttonConfirm_Click(object sender, EventArgs e)
         {

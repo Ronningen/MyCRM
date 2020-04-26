@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Drawing;
 using System.Collections.Generic;
-using System.Data.Entity.Core.Metadata.Edm;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using CRMCore.Entities;
 

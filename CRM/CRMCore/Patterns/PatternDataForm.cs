@@ -2,7 +2,6 @@
 using System.Windows.Forms;
 using System.Data.Entity;
 
-
 namespace CRMCore.Patterns
 {
     /// <summary>
@@ -47,6 +46,10 @@ namespace CRMCore.Patterns
             return source.Find(Convert.ToInt32(mainDataGridView.SelectedRows[index].Cells["ColumnId"].Value));
         }
 
+        /// <summary>
+        /// Checks some row in mainDataGridView is selected
+        /// </summary>
+        /// <returns></returns>
         protected bool SomethingSelected()
         {
             if (mainDataGridView.SelectedRows.Count >= 1)
