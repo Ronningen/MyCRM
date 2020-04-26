@@ -19,8 +19,8 @@ namespace CRMCore.Patterns
         protected PatternDataForm()
         {
             InitializeComponent();
-            this.source = Entities.EntitiesHandler.entitiesHandler.Entities.Set<TEntity>();
-            Text = typeof(TEntity).Name + "managment";
+            source = Entities.EntitiesHandler.entitiesHandler.Entities.Set<TEntity>();
+            FillTable();
         }
 
         /// <summary>
@@ -47,10 +47,21 @@ namespace CRMCore.Patterns
             return source.Find(Convert.ToInt32(mainDataGridView.SelectedRows[index].Cells["ColumnId"].Value));
         }
 
+        protected bool SomethingSelected()
+        {
+            if (mainDataGridView.SelectedRows.Count >= 1)
+                return true;
+            Inform("Select any row.");
+            return false;
+        }
+
         private void buttonEdit_Click(object sender, EventArgs e)
         {
-            this.OpenAsDialog(new TEntityForm() { entity = SelectedEntity(), mode = EntityFormMode.Edit });
-            FillTable();
+            if (SomethingSelected())
+            {
+                this.OpenAsDialog(new TEntityForm() { entity = SelectedEntity(), mode = EntityFormMode.Edit });
+                FillTable();
+            }
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
@@ -64,15 +75,19 @@ namespace CRMCore.Patterns
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            var result = MessageBox.Show("Do you really want to delete seleted " + typeof(TEntity).Name + "?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
-                DeleteSelectedEntity();
-            FillTable();
+            if (SomethingSelected())
+            {
+                var result = MessageBox.Show("Do you really want to delete seleted " + typeof(TEntity).Name + "?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                    DeleteSelectedEntity();
+                FillTable();
+            }
         }
 
         private void buttonObserve_Click(object sender, EventArgs e)
         {
-            this.OpenAsDialog(new TEntityForm() { mode = EntityFormMode.Observe });
+            if (SomethingSelected())
+                this.OpenAsDialog(new TEntityForm() { entity = SelectedEntity(), mode = EntityFormMode.Observe });
         }
     }
 }

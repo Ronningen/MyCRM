@@ -14,16 +14,15 @@ namespace CRMCore.Moduls.SignIn
             InitializeComponent();
             CreateEntitiesHandler();
             entitiesHandler.Load();
-            //load login
+            textBoxLogin.Text = LoginSaver.LoadLogin();
         }
 
         private void buttonSignIn_Click(object sender, EventArgs e)
         {
-            void Inform(string reason) { MessageBox.Show(reason, "", MessageBoxButtons.OK, MessageBoxIcon.Information); }
-
+            Cursor = Cursors.WaitCursor;
             if (String.IsNullOrWhiteSpace(textBoxLogin.Text))
                 Inform("Enter login");
-            else if (!(entitiesHandler.Entities?.Users.Where(u => u.Login.ToLower() == textBoxLogin.Text.ToLower()) is User currentUser))
+            else if (!(entitiesHandler.Entities.Users.Where(u => u.Login.ToLower().Trim() == textBoxLogin.Text.ToLower().Trim()).FirstOrDefault() is User currentUser))
                 Inform("Login is incorrect.");
             else if (String.IsNullOrWhiteSpace(textBoxPassword.Text))
                 Inform("Enter password.");
@@ -31,9 +30,12 @@ namespace CRMCore.Moduls.SignIn
                 Inform("Password is incorrect.");
             else
             {
-                //save login
+                if (checkBoxSaveLogin.Checked)
+                    LoginSaver.SaveLogin(textBoxLogin.Text);
                 Navigator navigator = new Navigator(currentUser);
+                navigator.OpenNavigator(this);
             }
+            Cursor = Cursors.Default;
         }
     }
 }

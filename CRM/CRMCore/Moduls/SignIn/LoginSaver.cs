@@ -1,12 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
 
 namespace CRMCore.Moduls.SignIn
 {
-    class LoginSaver
+    static class LoginSaver
     {
+        private const string path = "savedLogin";
+        public static void SaveLogin(string login)
+        {
+            File.WriteAllText(path, login);
+        }
+
+        public static string LoadLogin()
+        {
+            if (File.Exists(path))
+                return File.ReadAllText(path);
+            return "";
+        }
     }
 }

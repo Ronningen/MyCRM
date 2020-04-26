@@ -117,6 +117,7 @@
             this.Controls.Add(this.labelPassword);
             this.Controls.Add(this.textBoxLogin);
             this.Controls.Add(this.labelLogin);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "SignIn";
             this.Text = "Sign In";
             this.Controls.SetChildIndex(this.pictureBoxEmblem, 0);

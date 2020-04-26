@@ -36,7 +36,7 @@
             // 
             this.pictureBoxEmblem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxEmblem.Image = global::CRMCore.Properties.Resources.Emblem;
-            this.pictureBoxEmblem.Location = new System.Drawing.Point(111, 25);
+            this.pictureBoxEmblem.Location = new System.Drawing.Point(20, 25);
             this.pictureBoxEmblem.Margin = new System.Windows.Forms.Padding(10);
             this.pictureBoxEmblem.Name = "pictureBoxEmblem";
             this.pictureBoxEmblem.Padding = new System.Windows.Forms.Padding(10);
@@ -50,7 +50,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(211, 422);
+            this.ClientSize = new System.Drawing.Size(120, 85);
             this.Controls.Add(this.pictureBoxEmblem);
             this.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);

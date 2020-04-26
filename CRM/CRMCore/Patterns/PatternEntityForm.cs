@@ -30,11 +30,6 @@ namespace CRMCore.Patterns
         /// </summary>
         /// <param name="reason"> A messege which contains the reason of canseling </param>
         /// <returns></returns>
-        protected virtual bool StopPackingEntity(string reason)
-        {
-            MessageBox.Show(reason, "Wrong input", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            return false;
-        }
 
         private void buttonConfirm_Click(object sender, EventArgs e)
         {

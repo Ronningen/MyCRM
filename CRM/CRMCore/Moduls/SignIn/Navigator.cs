@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Collections.Generic;
 using System.Data.Entity.Core.Metadata.Edm;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace CRMCore.Moduls.SignIn
     {
         List<Patterns.PatternForm> forms;
         Action<string> formsGetter;
-        
+
         public Navigator(User user)
         {
             forms = new List<Patterns.PatternForm>();
@@ -38,6 +39,37 @@ namespace CRMCore.Moduls.SignIn
                 sender.OpenAsDialog(forms[0]);
             else
             {
+                Patterns.PatternForm navForm = new Patterns.PatternForm()
+                {
+                    AutoSize = true,
+                    FormBorderStyle = FormBorderStyle.FixedDialog,
+                    Text = "Navigation"
+                };
+                TableLayoutPanel table = new TableLayoutPanel()
+                {
+                    Location = new Point(15, 60),
+                    ColumnCount = 1,
+                    RowCount = forms.Count,
+                    AutoSize = true
+                };
+                int i = 0;
+                foreach (var f in forms)
+                {
+                    Button button = new Button();
+                    button.AutoSize = true;
+                    button.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+                    button.BackColor = Color.BlueViolet;
+                    button.FlatAppearance.BorderSize = 0;
+                    button.FlatStyle = FlatStyle.Flat;
+                    button.ForeColor = Color.White;
+                    button.Margin = new Padding(10);
+                    button.Padding = new Padding(10);
+                    button.Text = f.Text;
+                    button.Click += (object o, EventArgs e) => { navForm.OpenAsDialog(f); };
+                    table.Controls.Add(button, 0, i++);
+                }
+                navForm.Controls.Add(table);
+                sender.OpenAsDialog(navForm);
             }
         }
     }

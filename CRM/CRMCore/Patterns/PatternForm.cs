@@ -24,5 +24,10 @@ namespace CRMCore.Patterns
         {
             forceClosing = false;
         }
+
+        public void Inform(string reason)
+        { 
+            MessageBox.Show(reason, "", MessageBoxButtons.OK, MessageBoxIcon.Information); 
+        }
     }
 }
