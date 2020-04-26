@@ -16,6 +16,7 @@ namespace CRMCore.Moduls.SignIn
         
         public Navigator(User user)
         {
+            forms = new List<Patterns.PatternForm>();
             DefineFormsGetter();
             foreach (var role in user.Roles)
                 formsGetter.Invoke(role.RoleValue);
@@ -37,7 +38,6 @@ namespace CRMCore.Moduls.SignIn
                 sender.OpenAsDialog(forms[0]);
             else
             {
-                //generate new navigation form
             }
         }
     }
