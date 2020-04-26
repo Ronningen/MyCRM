@@ -12,8 +12,7 @@ namespace CRMCore.Moduls.SignIn
         public SignIn()
         {
             InitializeComponent();
-            CreateEntitiesHandler();
-            entitiesHandler.Load();
+            Handler.Load();
             textBoxLogin.Text = LoginSaver.LoadLogin();
         }
 
@@ -22,7 +21,7 @@ namespace CRMCore.Moduls.SignIn
             Cursor = Cursors.WaitCursor;
             if (String.IsNullOrWhiteSpace(textBoxLogin.Text))
                 Inform("Enter login");
-            else if (!(entitiesHandler.Entities.Users.Where(u => u.Login.ToLower().Trim() == textBoxLogin.Text.ToLower().Trim()).FirstOrDefault() is User currentUser))
+            else if (!(Handler.Entities.Users.Where(u => u.Login.ToLower().Trim() == textBoxLogin.Text.ToLower().Trim()).FirstOrDefault() is User currentUser))
                 Inform("Login is incorrect.");
             else if (String.IsNullOrWhiteSpace(textBoxPassword.Text))
                 Inform("Enter password.");

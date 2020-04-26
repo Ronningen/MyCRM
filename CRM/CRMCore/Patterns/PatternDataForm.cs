@@ -19,7 +19,7 @@ namespace CRMCore.Patterns
         protected PatternDataForm()
         {
             InitializeComponent();
-            source = Entities.EntitiesHandler.entitiesHandler.Entities.Set<TEntity>();
+            source = Entities.EntitiesHandler.Handler.Entities.Set<TEntity>();
             FillTable();
         }
 

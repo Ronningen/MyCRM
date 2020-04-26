@@ -9,13 +9,15 @@ namespace CRMCore.Entities
         public event Action DataGetFailed;
         public event Action DataSaveFailed;
 
-        public static EntitiesHandler entitiesHandler { get; private set; }
-
-        public static EntitiesHandler CreateEntitiesHandler()
+        private static EntitiesHandler handler;
+        public static EntitiesHandler Handler
         {
-            if (entitiesHandler == null)
-                entitiesHandler = new EntitiesHandler();
-            return entitiesHandler;
+            get
+            {
+                if (handler == null)
+                    handler = new EntitiesHandler();
+                return handler;
+            }
         }
 
         private EntitiesHandler()
