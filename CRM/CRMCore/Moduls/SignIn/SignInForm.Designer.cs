@@ -1,6 +1,6 @@
 ﻿namespace CRMCore.Moduls.SignIn
 {
-    partial class SignIn
+    partial class SignInForm
     {
         /// <summary>
         /// Required designer variable.

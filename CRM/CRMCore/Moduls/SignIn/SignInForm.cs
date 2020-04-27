@@ -7,9 +7,12 @@ using static CRMCore.Entities.EntitiesHandler;
 
 namespace CRMCore.Moduls.SignIn
 {
-    public partial class SignIn : Patterns.PatternForm
+    /// <summary>
+    /// Is used to authorise user and navigate him to managment form according to his roles.
+    /// </summary>
+    public partial class SignInForm : Patterns.PatternForm
     {
-        public SignIn()
+        public SignInForm()
         {
             InitializeComponent();
             Handler.Load();

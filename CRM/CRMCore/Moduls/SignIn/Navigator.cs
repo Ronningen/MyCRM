@@ -6,11 +6,17 @@ using CRMCore.Entities;
 
 namespace CRMCore.Moduls.SignIn
 {
+    /// <summary>
+    /// Navigate user in depenpence on his roles.
+    /// </summary>
     partial class Navigator
     {
         List<Patterns.PatternForm> forms;
         Action<string> formsGetter;
 
+        /// <summary>
+        /// </summary>
+        /// <param name="user"> user, whose roles are used for navigation. </param>
         public Navigator(User user)
         {
             forms = new List<Patterns.PatternForm>();
@@ -21,12 +27,23 @@ namespace CRMCore.Moduls.SignIn
 
         partial void DefineFormsGetter();
 
+        /// <summary>
+        /// If s matches to role, opens form for such role.
+        /// This method is used as linker in DefineFormsGetter().
+        /// </summary>
+        /// <typeparam name="Form"> type of form, openning in the method </typeparam>
+        /// <param name="s"> input value idential to arg of the formsGetter delegete </param>
+        /// <param name="role"> pattern role value, linked to "Form" </param>
         private void GetForm<Form>(string s, string role) where Form : Patterns.PatternForm, new()
         {
             if (s == role)
                 forms.Add(new Form());
         }
 
+        /// <summary>
+        /// Open navigation form if user has many roles or opens one concrete if user has only one role
+        /// </summary>
+        /// <param name="sender"></param>
         public void OpenNavigator(Form sender)
         {
             if (forms.Count < 1)

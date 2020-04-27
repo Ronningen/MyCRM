@@ -2,6 +2,9 @@
 
 namespace CRMCore.Entities
 {
+    /// <summary>
+    /// Provides tools to run DataContext
+    /// </summary>
     public partial class EntitiesHandler
     {
         public CRMContext Entities { get; private set; }
@@ -27,6 +30,9 @@ namespace CRMCore.Entities
 
         partial void DefineEvents();
 
+        /// <summary>
+        /// Try to load data from database. If fails, invokes DataGetFailed.
+        /// </summary>
         public void Load()
         {
             try
@@ -39,6 +45,9 @@ namespace CRMCore.Entities
             }
         }
 
+        /// <summary>
+        /// Try to save changes in dataSet to database. If fails, invokes DataSaveFailed.
+        /// </summary>
         public void Save()
         {
             try

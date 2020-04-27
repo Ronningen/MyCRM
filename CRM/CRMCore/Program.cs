@@ -13,7 +13,7 @@ namespace CRMCore
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Moduls.SignIn.SignIn());
+            Application.Run(new Moduls.SignIn.SignInForm());
         }
     }
 }
