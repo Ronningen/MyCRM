@@ -1,17 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Data.Entity;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-using CRMCore.Entities;
-using CRMCore.Moduls.Type_of_product_Managment;
-using static CRMCore.Entities.EntitiesHandler;
 
 namespace CRMCore.Moduls.User_Managment
 {
@@ -38,7 +27,7 @@ namespace CRMCore.Moduls.User_Managment
                 entity.Email = textBoxEmail.Text.Trim();
                 entity.Roles.Clear();
                 foreach (var r in listBoxRoles.Items)
-                    entity.Roles.Add(Handler.Entities.Roles.Find(r.ToString()));
+                    entity.Roles.Add(Entities.EntitiesHandler.Handler.Entities.Roles.Find(r.ToString()));
                 return true;
             }
             return false;

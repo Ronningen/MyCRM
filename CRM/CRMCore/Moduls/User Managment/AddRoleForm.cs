@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace CRMCore.Moduls.Type_of_product_Managment
+namespace CRMCore.Moduls.User_Managment
 {
     public partial class AddRoleForm : Patterns.PatternForm
     {

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Windows.Forms;
 
 namespace CRMCore.Moduls.Type_of_product_Managment

@@ -1,4 +1,4 @@
-﻿namespace CRMCore.Moduls.Type_of_product_Managment
+﻿namespace CRMCore.Moduls.User_Managment
 {
     partial class AddRoleForm
     {
