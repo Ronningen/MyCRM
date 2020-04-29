@@ -2,7 +2,7 @@
 {
     public enum EntityFormMode
     {
-        Observe,
+        Observe = 1,
         Add,
         Edit
     }

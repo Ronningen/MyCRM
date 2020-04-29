@@ -1,13 +1,14 @@
 ﻿using System;
+using System.Windows.Forms;
 
 namespace CRMCore.Patterns
 {
-    abstract public partial class PatternEntityForm<TEntity> : PatternForm where TEntity : class, new()
+    /*abstract*/ public partial class PatternEntityForm<TEntity> : PatternForm where TEntity : class, new()
     {
         public TEntity entity;
         public EntityFormMode mode;
 
-        protected PatternEntityForm()
+        public PatternEntityForm()
         {
             InitializeComponent();
         }
@@ -16,34 +17,39 @@ namespace CRMCore.Patterns
         /// Fills user controls with data from the param entity
         /// </summary>
         /// <param name="entity"></param>
-        protected abstract void UnpackEntity();
+        //protected abstract void UnpackEntity();
+        protected virtual void UnpackEntity() { }
 
         /// <summary>
         /// Checks input data from user controls and creates new entity from it
         /// </summary>
-        /// <returns></returns>
-        protected abstract bool PackEntity();
+        /// <returns> true if input has right format </returns>
+        //protected abstract bool PackEntity();
+        protected virtual bool PackEntity() { return false; }
 
         private void buttonConfirm_Click(object sender, EventArgs e)
         {
+            Cursor = Cursors.WaitCursor;
             if (PackEntity())
             {
                 forceClosing = true;
                 Close();
             }
+            Cursor = Cursors.Default;
         }
 
         private void PatternEntityForm_Load(object sender, EventArgs e)
         {
-            Text = mode.ToString() + typeof(TEntity).Name.ToLower();
-            switch (mode)
+            Text = mode.ToString() + " ";
+            if (mode == default)
+                ;// throw new Exception("mode is not initialized");
+            else if (mode != EntityFormMode.Add)
             {
-                case EntityFormMode.Edit:
-                    UnpackEntity();
-                    break;
-                case EntityFormMode.Observe:
+                if (entity == null)
+                    throw new Exception("entity is not initialized");
+                UnpackEntity();
+                if (mode == EntityFormMode.Observe)
                     buttonConfirm.Visible = false;
-                    break;
             }
         }
     }

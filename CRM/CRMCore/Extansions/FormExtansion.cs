@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace CRMCore
+namespace CRMCore.Extansions
 {
     public static class FormExtansion
     {

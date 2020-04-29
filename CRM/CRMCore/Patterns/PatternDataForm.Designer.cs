@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.mainDataGridView = new System.Windows.Forms.DataGridView();
-            this.ColumnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonEdit = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonObserve = new System.Windows.Forms.Button();
+            this.buttonNavigator = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEmblem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -50,26 +51,27 @@
             this.mainDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.mainDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.mainDataGridView.BackgroundColor = System.Drawing.Color.LavenderBlush;
             this.mainDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.mainDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnId});
+            this.Id});
             this.mainDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.mainDataGridView.Location = new System.Drawing.Point(18, 25);
             this.mainDataGridView.Margin = new System.Windows.Forms.Padding(10);
             this.mainDataGridView.Name = "mainDataGridView";
             this.mainDataGridView.ReadOnly = true;
             this.mainDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.mainDataGridView.Size = new System.Drawing.Size(576, 304);
+            this.mainDataGridView.Size = new System.Drawing.Size(576, 370);
             this.mainDataGridView.TabIndex = 1;
             // 
-            // ColumnId
+            // Id
             // 
-            this.ColumnId.Frozen = true;
-            this.ColumnId.HeaderText = "Id";
-            this.ColumnId.Name = "ColumnId";
-            this.ColumnId.ReadOnly = true;
-            this.ColumnId.Visible = false;
+            this.Id.Frozen = true;
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
             // 
             // buttonAdd
             // 
@@ -139,11 +141,28 @@
             this.buttonObserve.UseVisualStyleBackColor = false;
             this.buttonObserve.Click += new System.EventHandler(this.buttonObserve_Click);
             // 
+            // buttonNavigator
+            // 
+            this.buttonNavigator.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonNavigator.BackColor = System.Drawing.Color.BlueViolet;
+            this.buttonNavigator.FlatAppearance.BorderSize = 0;
+            this.buttonNavigator.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNavigator.ForeColor = System.Drawing.Color.White;
+            this.buttonNavigator.Location = new System.Drawing.Point(614, 347);
+            this.buttonNavigator.Margin = new System.Windows.Forms.Padding(10);
+            this.buttonNavigator.Name = "buttonNavigator";
+            this.buttonNavigator.Padding = new System.Windows.Forms.Padding(10);
+            this.buttonNavigator.Size = new System.Drawing.Size(138, 45);
+            this.buttonNavigator.TabIndex = 10;
+            this.buttonNavigator.UseVisualStyleBackColor = false;
+            this.buttonNavigator.Visible = false;
+            // 
             // PatternDataForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(777, 347);
+            this.ClientSize = new System.Drawing.Size(777, 413);
+            this.Controls.Add(this.buttonNavigator);
             this.Controls.Add(this.buttonObserve);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonEdit);
@@ -151,12 +170,14 @@
             this.Controls.Add(this.mainDataGridView);
             this.Name = "PatternDataForm";
             this.Text = "";
+            this.Load += new System.EventHandler(this.PatternDataForm_Load);
             this.Controls.SetChildIndex(this.pictureBoxEmblem, 0);
             this.Controls.SetChildIndex(this.mainDataGridView, 0);
             this.Controls.SetChildIndex(this.buttonAdd, 0);
             this.Controls.SetChildIndex(this.buttonEdit, 0);
             this.Controls.SetChildIndex(this.buttonDelete, 0);
             this.Controls.SetChildIndex(this.buttonObserve, 0);
+            this.Controls.SetChildIndex(this.buttonNavigator, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEmblem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainDataGridView)).EndInit();
             this.ResumeLayout(false);
@@ -165,11 +186,13 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView mainDataGridView;
-        private System.Windows.Forms.Button buttonAdd;
-        private System.Windows.Forms.Button buttonEdit;
-        private System.Windows.Forms.Button buttonDelete;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnId;
-        private System.Windows.Forms.Button buttonObserve;
+        protected System.Windows.Forms.DataGridView mainDataGridView;
+        protected System.Windows.Forms.Button buttonAdd;
+        protected System.Windows.Forms.Button buttonEdit;
+        protected System.Windows.Forms.Button buttonDelete;
+        protected System.Windows.Forms.DataGridViewTextBoxColumn ColumnId;
+        protected System.Windows.Forms.Button buttonObserve;
+        protected System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        protected System.Windows.Forms.Button buttonNavigator;
     }
 }

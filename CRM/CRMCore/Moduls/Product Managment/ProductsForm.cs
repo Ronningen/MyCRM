@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+﻿using CRMCore.Extansions;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CRMCore.Moduls.Product_Managment
@@ -15,11 +9,41 @@ namespace CRMCore.Moduls.Product_Managment
         public ProductsForm()
         {
             InitializeComponent();
+            mainDataGridView.Columns["Id"].Visible = true;
+            mainDataGridView.Columns.AddRange(new DataGridViewColumn[]
+            {
+                new DataGridViewTextBoxColumn()
+                {
+                    HeaderText = "Type",
+                    Name = "Type",
+                    ReadOnly = true
+                },
+                new DataGridViewCheckBoxColumn()
+                {
+                    HeaderText = "Sold",
+                    Name = "Sold",
+                    ReadOnly = true
+                },
+            });
+            buttonNavigator.Visible = true;
+            buttonNavigator.Text = "Types";
+            buttonNavigator.Click += (o, e) => this.OpenAsDialog(new Type_of_product_Managment.ProductTypesForm());
         }
 
         protected override void FillTable()
         {
-            throw new NotImplementedException();
+            mainDataGridView.Rows.Add(source.Count());
+            int i = 0;
+            foreach (var entity in source)
+            {
+                var row = mainDataGridView.Rows[i++];
+                row.Cells["Id"].Value = entity.Id;
+                row.Cells["Type"].Value = entity.ProductType.Description;
+                row.Cells["Sold"].Value = entity.Sold;
+                if (entity.Sold)
+                    for (int j = 0; j < row.Cells.Count; j++)
+                        row.Cells[j].Style.BackColor = System.Drawing.Color.LightGray;
+            }
         }
     }
 }

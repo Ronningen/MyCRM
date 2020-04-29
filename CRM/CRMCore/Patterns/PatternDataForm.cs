@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 using System.Data.Entity;
+
+using CRMCore.Extansions;
 
 namespace CRMCore.Patterns
 {
@@ -15,17 +18,30 @@ namespace CRMCore.Patterns
     {
         protected DbSet<TEntity> source;
 
-        protected PatternDataForm()
+        public PatternDataForm()
         {
             InitializeComponent();
             source = Entities.EntitiesHandler.Handler.Entities.Set<TEntity>();
-            FillTable();
         }
 
         /// <summary>
         /// Fills mainDataGridView with data from DbSet source
         /// </summary>
         protected abstract void FillTable();
+
+        private void UpdateTable()
+        {
+            if (source.Count() > 0)
+            {
+                mainDataGridView.Rows.Clear();
+                FillTable();
+            }
+        }
+
+        private void PatternDataForm_Load(object sender, EventArgs e)
+        {
+            UpdateTable();
+        }
 
         /// <summary>
         /// In base removes all selected entites
@@ -43,7 +59,7 @@ namespace CRMCore.Patterns
         /// <returns></returns>
         protected TEntity SelectedEntity(int index = 0)
         {
-            return source.Find(Convert.ToInt32(mainDataGridView.SelectedRows[index].Cells["ColumnId"].Value));
+            return source.Find(mainDataGridView.SelectedRows[index].Cells["Id"].Value);
         }
 
         /// <summary>
@@ -63,7 +79,8 @@ namespace CRMCore.Patterns
             if (SomethingSelected())
             {
                 this.OpenAsDialog(new TEntityForm() { entity = SelectedEntity(), mode = EntityFormMode.Edit });
-                FillTable();
+                Entities.EntitiesHandler.Handler.Save();
+                UpdateTable();
             }
         }
 
@@ -71,9 +88,18 @@ namespace CRMCore.Patterns
         {
             TEntityForm entityForm = new TEntityForm() { mode = EntityFormMode.Add };
             this.OpenAsDialog(entityForm);
-            if (entityForm.entity != null)
-                source.Add(entityForm.entity);
-            FillTable();
+            if (entityForm.entity != new TEntity())
+            {
+                source.Add(entityForm.entity as TEntity);
+                Entities.EntitiesHandler.Handler.Save();
+                UpdateTable();
+            }
+        }
+
+        private void buttonObserve_Click(object sender, EventArgs e)
+        {
+            if (SomethingSelected())
+                this.OpenAsDialog(new TEntityForm() { entity = SelectedEntity(), mode = EntityFormMode.Observe });
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
@@ -82,15 +108,12 @@ namespace CRMCore.Patterns
             {
                 var result = MessageBox.Show("Do you really want to delete seleted " + typeof(TEntity).Name + "?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
+                {
                     DeleteSelectedEntity();
-                FillTable();
+                    Entities.EntitiesHandler.Handler.Save();
+                    UpdateTable();
+                }
             }
-        }
-
-        private void buttonObserve_Click(object sender, EventArgs e)
-        {
-            if (SomethingSelected())
-                this.OpenAsDialog(new TEntityForm() { entity = SelectedEntity(), mode = EntityFormMode.Observe });
         }
     }
 }

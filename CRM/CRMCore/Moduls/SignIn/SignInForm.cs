@@ -23,7 +23,7 @@ namespace CRMCore.Moduls.SignIn
         {
             Cursor = Cursors.WaitCursor;
             if (String.IsNullOrWhiteSpace(textBoxLogin.Text))
-                Inform("Enter login");
+                Inform("Enter login.");
             else if (!(Handler.Entities.Users.Where(u => u.Login.ToLower().Trim() == textBoxLogin.Text.ToLower().Trim()).FirstOrDefault() is User currentUser))
                 Inform("Login is incorrect.");
             else if (String.IsNullOrWhiteSpace(textBoxPassword.Text))

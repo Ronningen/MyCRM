@@ -1,35 +1,28 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 
-using CRMCore.Extansions;
-
-namespace CRMCore.Moduls.Customer_Managment
+namespace CRMCore.Moduls.Type_of_product_Managment
 {
-    public partial class CustomersForm : Patterns.PatternDataForm<Entities.Customer, CustomerEntityForm>
+    public partial class ProductTypesForm : Patterns.PatternDataForm<Entities.ProductType, ProductTypeEntityForm>
     {
-        public CustomersForm()
+        public ProductTypesForm()
         {
             InitializeComponent();
             mainDataGridView.Columns.AddRange(new DataGridViewColumn[]
             {
                 new DataGridViewTextBoxColumn()
                 {
-                    HeaderText = "Name",
-                    Name = "Name",
+                    HeaderText = "Description",
+                    Name = "Description",
                     ReadOnly = true
                 },
                 new DataGridViewTextBoxColumn()
                 {
-                    HeaderText = "Phone",
-                    Name = "Phone",
+                    HeaderText = "Price",
+                    Name = "Price",
                     ReadOnly = true
                 },
-                new DataGridViewTextBoxColumn()
-                {
-                    HeaderText = "Email",
-                    Name = "Email",
-                    ReadOnly = true
-                }
             });
         }
 
@@ -41,9 +34,8 @@ namespace CRMCore.Moduls.Customer_Managment
             {
                 var row = mainDataGridView.Rows[i++];
                 row.Cells["Id"].Value = entity.Id;
-                row.Cells["Name"].Value = entity.FullName();
-                row.Cells["Phone"].Value = entity.Phone;
-                row.Cells["Email"].Value = entity.Email;
+                row.Cells["Description"].Value = entity.Description;
+                row.Cells["Price"].Value = entity.Price.ToString();
             }
         }
     }

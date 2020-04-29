@@ -34,11 +34,11 @@ namespace CRMCore.Moduls.SignIn
         /// </summary>
         partial void DefineFormsGetter()
         {
-            // pattern: formsGetter += (string s) => GetForm<Entity_Managment.OrdersForm>(s, "RoleToEntity");
-            formsGetter += (string s) => GetForm<Order_Managment.OrdersForm>(s, "OrderM");
-            formsGetter += (string s) => GetForm<User_Managment.UsersForm>(s, "UserM");
-            formsGetter += (string s) => GetForm<Product_Managment.ProductsForm>(s, "ProductM");
-            formsGetter += (string s) => GetForm<Customer_Managment.CustomersForm>(s, "CustomerM");
+            // pattern: formsGetter += s => GetForm<Entity_Managment.OrdersForm>(s, "RoleToEntity");
+            formsGetter += s => GetForm<User_Managment.UsersForm>(s, "UserM");
+            formsGetter += s => GetForm<Product_Managment.ProductsForm>(s, "ProductM");
+            formsGetter += s => GetForm<Customer_Managment.CustomersForm>(s, "CustomerM");
+            formsGetter += s => GetForm<Order_Managment.OrdersForm>(s, "CustomerM");
         }
     }
 }

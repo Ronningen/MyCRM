@@ -53,6 +53,7 @@
             this.ClientSize = new System.Drawing.Size(120, 85);
             this.Controls.Add(this.pictureBoxEmblem);
             this.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ForeColor = System.Drawing.Color.BlueViolet;
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "PatternForm";
             this.Padding = new System.Windows.Forms.Padding(15);

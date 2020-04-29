@@ -4,6 +4,9 @@ namespace CRMCore.Patterns
 {
     public partial class PatternForm : Form
     {
+        /// <summary>
+        /// Order not using dialof for closing form
+        /// </summary>
         protected bool forceClosing;
 
         public PatternForm()

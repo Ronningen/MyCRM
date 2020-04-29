@@ -2,7 +2,9 @@
 using System.Drawing;
 using System.Collections.Generic;
 using System.Windows.Forms;
+
 using CRMCore.Entities;
+using CRMCore.Extansions;
 
 namespace CRMCore.Moduls.SignIn
 {
@@ -28,7 +30,7 @@ namespace CRMCore.Moduls.SignIn
         partial void DefineFormsGetter();
 
         /// <summary>
-        /// If s matches to role, opens form for such role.
+        /// If "s" matches to "role", give access to form for such role.
         /// This method is used as linker in DefineFormsGetter().
         /// </summary>
         /// <typeparam name="Form"> type of form, openning in the method </typeparam>
@@ -78,7 +80,7 @@ namespace CRMCore.Moduls.SignIn
                     button.Margin = new Padding(10);
                     button.Padding = new Padding(10);
                     button.Text = f.Text;
-                    button.Click += (object o, EventArgs e) => { navForm.OpenAsDialog(f); };
+                    button.Click += (o, e) => { navForm.OpenAsDialog(f); };
                     table.Controls.Add(button, 0, i++);
                 }
                 navForm.Controls.Add(table);

@@ -77,17 +77,7 @@ create table ConcreteProducts
 (
 	Id uniqueidentifier primary key default newsequentialid(),
 	ProductTypeId uniqueidentifier foreign key references ProductTypes(Id) on delete cascade on update cascade not null,
-	Sold bit default 0 not null
-)
-go
-
---Order module : Client, Product
-
-insert into Roles(RoleValue) values ('OrderM')
-
-create table OrderLineProducts
-(
-	ConcreteProductId uniqueidentifier primary key foreign key references ConcreteProducts(Id) on delete cascade on update cascade, 
-	OrderId uniqueidentifier foreign key references Orders(Id) on delete cascade on update cascade not null
+	Sold bit default 0 not null,
+	OrderId uniqueidentifier foreign key references Orders(Id) on delete cascade on update cascade null
 )
 go

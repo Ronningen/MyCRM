@@ -72,6 +72,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button buttonConfirm;
+        protected System.Windows.Forms.Button buttonConfirm;
     }
 }

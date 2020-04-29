@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using System.Windows.Forms;
+
+using CRMCore.Extansions;
 
 namespace CRMCore.Moduls.Order_Managment
 {
@@ -15,11 +10,50 @@ namespace CRMCore.Moduls.Order_Managment
         public OrdersForm()
         {
             InitializeComponent();
+            mainDataGridView.Columns["Id"].Visible = true;
+            mainDataGridView.Columns.AddRange(new DataGridViewColumn[]
+            {
+                new DataGridViewTextBoxColumn()
+                {
+                    HeaderText = "Description",
+                    Name = "Description",
+                    ReadOnly = true
+                },
+                new DataGridViewTextBoxColumn()
+                {
+                    HeaderText = "Customer",
+                    Name = "Customer",
+                    ReadOnly = true
+                },
+                new DataGridViewTextBoxColumn()
+                {
+                    HeaderText = "Status",
+                    Name = "Status",
+                    ReadOnly = true
+                },
+                new DataGridViewTextBoxColumn()
+                {
+                    HeaderText = "Close date",
+                    Name = "CloseDate",
+                    ReadOnly = true
+                }
+            });
         }
 
         protected override void FillTable()
         {
-            throw new NotImplementedException();
+            mainDataGridView.Rows.Clear();
+            mainDataGridView.Rows.Add(source.Count());
+            int i = 0;
+            foreach (var entity in source)
+            {
+                var row = mainDataGridView.Rows[i++];
+                row.Cells["Id"].Value = entity.Id;
+                row.Cells["Description"].Value = entity.Description;
+                row.Cells["Customer"].Value = entity.Customer.FullName();
+                row.Cells["Status"].Value = entity.Status;
+                row.Cells["CloseDate"].Value = entity.CloseDate.ToShortDateString();
+            }
         }
     }
 }

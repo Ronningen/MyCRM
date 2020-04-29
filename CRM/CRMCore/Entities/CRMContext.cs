@@ -1,12 +1,15 @@
 namespace CRMCore.Entities
 {
+    using System;
     using System.Data.Entity;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Linq;
 
     public partial class CRMContext : DbContext
     {
-        public CRMContext() : base("name=CRMContext")
+        public CRMContext()
+            : base("name=CRMContext")
         {
-
         }
 
         public virtual DbSet<ConcreteProduct> ConcreteProducts { get; set; }
@@ -18,6 +21,11 @@ namespace CRMCore.Entities
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Order>()
+                .HasMany(e => e.ConcreteProducts)
+                .WithOptional(e => e.Order)
+                .WillCascadeOnDelete();
+
             modelBuilder.Entity<ProductType>()
                 .Property(e => e.Price)
                 .HasPrecision(19, 4);
