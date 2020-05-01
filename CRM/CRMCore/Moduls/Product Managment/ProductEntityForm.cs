@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+
+using static CRMCore.Entities.EntitiesHandler;
 
 namespace CRMCore.Moduls.Product_Managment
 {
@@ -15,16 +11,33 @@ namespace CRMCore.Moduls.Product_Managment
         public ProductEntityForm()
         {
             InitializeComponent();
+            comboBoxType.Items.AddRange(Handler.Entities.ProductTypes.Select(s => s.Description).ToArray());
         }
 
         protected override bool PackEntity()
         {
-            throw new NotImplementedException();
+            if (comboBoxType.SelectedItem == null)
+                Inform("Select some type.");
+            else
+            {
+                if (entity == null)
+                    entity = new Entities.ConcreteProduct();
+                entity.ProductType = Handler.Entities.ProductTypes.Where(t => t.Description == comboBoxType.SelectedItem.ToString()).FirstOrDefault();
+                entity.Sold = checkBoxSold.Checked;
+                return true;
+            }
+            return false;
         }
 
         protected override void UnpackEntity()
         {
-            throw new NotImplementedException();
+            checkBoxSold.Checked = entity.Sold;
+            comboBoxType.SelectedItem = entity.ProductType.Description;
+        }
+
+        private void ProductEntityForm_Load(object sender, EventArgs e)
+        {
+            Text += "product";
         }
     }
 }

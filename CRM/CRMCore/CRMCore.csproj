@@ -67,6 +67,12 @@
     <Compile Include="Entities\User.cs" />
     <Compile Include="Extansions\CustomerExtansion.cs" />
     <Compile Include="Entities\EntitiesHandler.cs" />
+    <Compile Include="Moduls\Order Managment\AddProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Moduls\Order Managment\AddProductForm.Designer.cs">
+      <DependentUpon>AddProductForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Moduls\SignIn\LoginSaver.cs" />
     <Compile Include="Moduls\SignIn\Navigator.cs" />
     <Compile Include="Moduls\User Managment\AddRoleForm.cs">
@@ -164,6 +170,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Moduls\Customer Managment\CustomerEntityForm.resx">
+      <DependentUpon>CustomerEntityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Moduls\Order Managment\AddProductForm.resx">
+      <DependentUpon>AddProductForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Moduls\Order Managment\OrderEntityForm.resx">
+      <DependentUpon>OrderEntityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Moduls\Product Managment\ProductEntityForm.resx">
+      <DependentUpon>ProductEntityForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Moduls\SignIn\SignInForm.resx">
       <DependentUpon>SignInForm.cs</DependentUpon>
     </EmbeddedResource>

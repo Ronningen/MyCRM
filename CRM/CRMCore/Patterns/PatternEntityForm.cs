@@ -42,7 +42,7 @@ namespace CRMCore.Patterns
         {
             Text = mode.ToString() + " ";
             if (mode == default)
-                ;// throw new Exception("mode is not initialized");
+                throw new Exception("mode is not initialized");
             else if (mode != EntityFormMode.Add)
             {
                 if (entity == null)

@@ -88,7 +88,7 @@ namespace CRMCore.Patterns
         {
             TEntityForm entityForm = new TEntityForm() { mode = EntityFormMode.Add };
             this.OpenAsDialog(entityForm);
-            if (entityForm.entity != new TEntity())
+            if (entityForm.entity != null)
             {
                 source.Add(entityForm.entity as TEntity);
                 Entities.EntitiesHandler.Handler.Save();
