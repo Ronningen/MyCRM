@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelеTypes = new System.Windows.Forms.Label();
             this.comboBoxType = new System.Windows.Forms.ComboBox();
             this.checkBoxSold = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEmblem)).BeginInit();
@@ -44,14 +44,14 @@
             // 
             this.pictureBoxEmblem.Location = new System.Drawing.Point(97, 25);
             // 
-            // label1
+            // labelеTypes
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 56);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 18);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Type:";
+            this.labelеTypes.AutoSize = true;
+            this.labelеTypes.Location = new System.Drawing.Point(22, 56);
+            this.labelеTypes.Name = "labelеTypes";
+            this.labelеTypes.Size = new System.Drawing.Size(52, 18);
+            this.labelеTypes.TabIndex = 8;
+            this.labelеTypes.Text = "Type:";
             // 
             // comboBoxType
             // 
@@ -81,14 +81,14 @@
             this.ClientSize = new System.Drawing.Size(197, 226);
             this.Controls.Add(this.checkBoxSold);
             this.Controls.Add(this.comboBoxType);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelеTypes);
             this.MinimumSize = new System.Drawing.Size(213, 265);
             this.Name = "ProductEntityForm";
             this.Text = "ProductEntityForm";
             this.Load += new System.EventHandler(this.ProductEntityForm_Load);
             this.Controls.SetChildIndex(this.pictureBoxEmblem, 0);
             this.Controls.SetChildIndex(this.buttonConfirm, 0);
-            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.labelеTypes, 0);
             this.Controls.SetChildIndex(this.comboBoxType, 0);
             this.Controls.SetChildIndex(this.checkBoxSold, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEmblem)).EndInit();
@@ -99,7 +99,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelеTypes;
         private System.Windows.Forms.ComboBox comboBoxType;
         private System.Windows.Forms.CheckBox checkBoxSold;
     }

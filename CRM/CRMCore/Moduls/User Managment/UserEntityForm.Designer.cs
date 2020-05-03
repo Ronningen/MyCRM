@@ -36,7 +36,7 @@
             this.labelPhone = new System.Windows.Forms.Label();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.labelEmail = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelRoles = new System.Windows.Forms.Label();
             this.listBoxRoles = new System.Windows.Forms.ListBox();
             this.buttonAddRole = new System.Windows.Forms.Button();
             this.buttonRemoveRole = new System.Windows.Forms.Button();
@@ -129,14 +129,14 @@
             this.labelEmail.TabIndex = 16;
             this.labelEmail.Text = "Email:";
             // 
-            // label1
+            // labelRoles
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 324);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 18);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Roles:";
+            this.labelRoles.AutoSize = true;
+            this.labelRoles.Location = new System.Drawing.Point(23, 324);
+            this.labelRoles.Name = "labelRoles";
+            this.labelRoles.Size = new System.Drawing.Size(60, 18);
+            this.labelRoles.TabIndex = 18;
+            this.labelRoles.Text = "Roles:";
             // 
             // listBoxRoles
             // 
@@ -183,7 +183,7 @@
             this.Controls.Add(this.buttonRemoveRole);
             this.Controls.Add(this.buttonAddRole);
             this.Controls.Add(this.listBoxRoles);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelRoles);
             this.Controls.Add(this.textBoxEmail);
             this.Controls.Add(this.labelEmail);
             this.Controls.Add(this.textBoxPhone);
@@ -206,7 +206,7 @@
             this.Controls.SetChildIndex(this.textBoxPhone, 0);
             this.Controls.SetChildIndex(this.labelEmail, 0);
             this.Controls.SetChildIndex(this.textBoxEmail, 0);
-            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.labelRoles, 0);
             this.Controls.SetChildIndex(this.listBoxRoles, 0);
             this.Controls.SetChildIndex(this.buttonAddRole, 0);
             this.Controls.SetChildIndex(this.buttonRemoveRole, 0);
@@ -226,7 +226,7 @@
         private System.Windows.Forms.Label labelPhone;
         private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.Label labelEmail;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelRoles;
         private System.Windows.Forms.ListBox listBoxRoles;
         private System.Windows.Forms.Button buttonAddRole;
         private System.Windows.Forms.Button buttonRemoveRole;
