@@ -77,7 +77,9 @@ create table ConcreteProducts
 (
 	Id uniqueidentifier primary key default newsequentialid(),
 	ProductTypeId uniqueidentifier foreign key references ProductTypes(Id) on delete cascade on update cascade not null,
+
+	OrderId uniqueidentifier foreign key references Orders(Id) on delete set null on update cascade null,
+
 	Sold bit default 0 not null,
-	OrderId uniqueidentifier foreign key references Orders(Id) on delete cascade on update cascade null
 )
 go
