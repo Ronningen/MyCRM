@@ -67,85 +67,85 @@
     <Compile Include="Entities\User.cs" />
     <Compile Include="Extansions\CustomerExtansion.cs" />
     <Compile Include="Entities\EntitiesHandler.cs" />
-    <Compile Include="Moduls\Order Managment\AddProductForm.cs">
+    <Compile Include="Modules\Order Management\AddProductForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Moduls\Order Managment\AddProductForm.Designer.cs">
+    <Compile Include="Modules\Order Management\AddProductForm.Designer.cs">
       <DependentUpon>AddProductForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Moduls\SignIn\LoginSaver.cs" />
-    <Compile Include="Moduls\SignIn\Navigator.cs" />
-    <Compile Include="Moduls\User Managment\AddRoleForm.cs">
+    <Compile Include="Modules\SignIn\LoginSaver.cs" />
+    <Compile Include="Modules\SignIn\Navigator.cs" />
+    <Compile Include="Modules\User Management\AddRoleForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Moduls\User Managment\AddRoleForm.Designer.cs">
+    <Compile Include="Modules\User Management\AddRoleForm.Designer.cs">
       <DependentUpon>AddRoleForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Moduls\Type of product Managment\ProductTypeEntityForm.cs">
+    <Compile Include="Modules\Type of product Management\ProductTypeEntityForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Moduls\Type of product Managment\ProductTypeEntityForm.Designer.cs">
+    <Compile Include="Modules\Type of product Management\ProductTypeEntityForm.Designer.cs">
       <DependentUpon>ProductTypeEntityForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Moduls\Type of product Managment\ProductTypesForm.cs">
+    <Compile Include="Modules\Type of product Management\ProductTypesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Moduls\Type of product Managment\ProductTypesForm.Designer.cs">
+    <Compile Include="Modules\Type of product Management\ProductTypesForm.Designer.cs">
       <DependentUpon>ProductTypesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UserCode.cs" />
-    <Compile Include="Moduls\Customer Managment\CustomerEntityForm.cs">
+    <Compile Include="Modules\Customer Management\CustomerEntityForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Moduls\Customer Managment\CustomerEntityForm.Designer.cs">
+    <Compile Include="Modules\Customer Management\CustomerEntityForm.Designer.cs">
       <DependentUpon>CustomerEntityForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Moduls\Customer Managment\CustomersForm.cs">
+    <Compile Include="Modules\Customer Management\CustomersForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Moduls\Customer Managment\CustomersForm.Designer.cs">
+    <Compile Include="Modules\Customer Management\CustomersForm.Designer.cs">
       <DependentUpon>CustomersForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Moduls\SignIn\SignInForm.cs">
+    <Compile Include="Modules\SignIn\SignInForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Moduls\SignIn\SignInForm.Designer.cs">
+    <Compile Include="Modules\SignIn\SignInForm.Designer.cs">
       <DependentUpon>SignInForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Moduls\Order Managment\OrderEntityForm.cs">
+    <Compile Include="Modules\Order Management\OrderEntityForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Moduls\Order Managment\OrderEntityForm.Designer.cs">
+    <Compile Include="Modules\Order Management\OrderEntityForm.Designer.cs">
       <DependentUpon>OrderEntityForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Moduls\Order Managment\OrdersForm.cs">
+    <Compile Include="Modules\Order Management\OrdersForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Moduls\Order Managment\OrdersForm.Designer.cs">
+    <Compile Include="Modules\Order Management\OrdersForm.Designer.cs">
       <DependentUpon>OrdersForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Moduls\Product Managment\ProductEntityForm.cs">
+    <Compile Include="Modules\Product Management\ProductEntityForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Moduls\Product Managment\ProductEntityForm.Designer.cs">
+    <Compile Include="Modules\Product Management\ProductEntityForm.Designer.cs">
       <DependentUpon>ProductEntityForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Moduls\Product Managment\ProductsForm.cs">
+    <Compile Include="Modules\Product Management\ProductsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Moduls\Product Managment\ProductsForm.Designer.cs">
+    <Compile Include="Modules\Product Management\ProductsForm.Designer.cs">
       <DependentUpon>ProductsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Moduls\User Managment\UserEntityForm.cs">
+    <Compile Include="Modules\User Management\UserEntityForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Moduls\User Managment\UserEntityForm.Designer.cs">
+    <Compile Include="Modules\User Management\UserEntityForm.Designer.cs">
       <DependentUpon>UserEntityForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Moduls\User Managment\UsersForm.cs">
+    <Compile Include="Modules\User Management\UsersForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Moduls\User Managment\UsersForm.Designer.cs">
+    <Compile Include="Modules\User Management\UsersForm.Designer.cs">
       <DependentUpon>UsersForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Patterns\EntityFormMode.cs" />
@@ -170,28 +170,28 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Moduls\Customer Managment\CustomerEntityForm.resx">
+    <EmbeddedResource Include="Modules\Customer Management\CustomerEntityForm.resx">
       <DependentUpon>CustomerEntityForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Moduls\Order Managment\AddProductForm.resx">
+    <EmbeddedResource Include="Modules\Order Management\AddProductForm.resx">
       <DependentUpon>AddProductForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Moduls\Order Managment\OrderEntityForm.resx">
+    <EmbeddedResource Include="Modules\Order Management\OrderEntityForm.resx">
       <DependentUpon>OrderEntityForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Moduls\Product Managment\ProductEntityForm.resx">
+    <EmbeddedResource Include="Modules\Product Management\ProductEntityForm.resx">
       <DependentUpon>ProductEntityForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Moduls\SignIn\SignInForm.resx">
+    <EmbeddedResource Include="Modules\SignIn\SignInForm.resx">
       <DependentUpon>SignInForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Moduls\User Managment\AddRoleForm.resx">
+    <EmbeddedResource Include="Modules\User Management\AddRoleForm.resx">
       <DependentUpon>AddRoleForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Moduls\Type of product Managment\ProductTypeEntityForm.resx">
+    <EmbeddedResource Include="Modules\Type of product Management\ProductTypeEntityForm.resx">
       <DependentUpon>ProductTypeEntityForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Moduls\User Managment\UserEntityForm.resx">
+    <EmbeddedResource Include="Modules\User Management\UserEntityForm.resx">
       <DependentUpon>UserEntityForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Patterns\PatternEntityForm.resx">
