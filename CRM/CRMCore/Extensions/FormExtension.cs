@@ -2,7 +2,7 @@
 
 namespace CRMCore.Extansions
 {
-    public static class FormExtansion
+    public static class FormExtension
     {
         /// <summary>
         /// Hides sender, showes dialogForm as modal dialog form and showes sender after closing dialogForm

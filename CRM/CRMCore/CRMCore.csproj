@@ -65,7 +65,7 @@
     <Compile Include="Entities\ProductType.cs" />
     <Compile Include="Entities\Role.cs" />
     <Compile Include="Entities\User.cs" />
-    <Compile Include="Extansions\CustomerExtansion.cs" />
+    <Compile Include="Extensions\CustomerExtension.cs" />
     <Compile Include="Entities\EntitiesHandler.cs" />
     <Compile Include="Modules\Order Management\AddProductForm.cs">
       <SubType>Form</SubType>
@@ -149,7 +149,7 @@
       <DependentUpon>UsersForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Patterns\EntityFormMode.cs" />
-    <Compile Include="Extansions\FormExtansion.cs" />
+    <Compile Include="Extensions\FormExtension.cs" />
     <Compile Include="Patterns\PatternEntityForm.cs">
       <SubType>Form</SubType>
     </Compile>

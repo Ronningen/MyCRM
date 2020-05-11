@@ -1,6 +1,6 @@
 ﻿namespace CRMCore.Extansions
 {
-    static class CustomerExtansion
+    static class CustomerExtension
     {
         public static string FullName(this Entities.Customer customer)
         {
