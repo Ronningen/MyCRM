@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace CRMCore.Patterns
 {
-    /*abstract*/ public partial class PatternEntityForm<TEntity> : PatternForm where TEntity : class, new()
+    abstract public partial class PatternEntityForm<TEntity> : PatternForm where TEntity : class, new()
     {
         public TEntity entity;
         public EntityFormMode mode;
@@ -17,15 +17,13 @@ namespace CRMCore.Patterns
         /// Fills user controls with data from the param entity
         /// </summary>
         /// <param name="entity"></param>
-        //protected abstract void UnpackEntity();
-        protected virtual void UnpackEntity() { }
+        protected abstract void UnpackEntity();
 
         /// <summary>
         /// Checks input data from user controls and creates new entity from it
         /// </summary>
         /// <returns> true if input has right format </returns>
-        //protected abstract bool PackEntity();
-        protected virtual bool PackEntity() { return false; }
+        protected abstract bool PackEntity();
 
         private void buttonConfirm_Click(object sender, EventArgs e)
         {
